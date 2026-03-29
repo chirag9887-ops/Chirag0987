@@ -1,0 +1,12 @@
+# Compiler install karein
+sudo apt update && sudo apt install g++ -y
+
+# Code ko compile karke binary file banayein
+g++ primexarmy.cpp -o primexarmy
+
+# Binary ko execute permission dein
+chmod +x primexarmy
+
+git add primexarmy
+git commit -m "Add core engine"
+git push origin main
