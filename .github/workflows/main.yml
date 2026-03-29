@@ -1,0 +1,20 @@
+name: PRIMEXARMY_CORE
+on: 
+  workflow_dispatch:
+    inputs:
+      ip: { required: true }
+      port: { required: true }
+      time: { required: true }
+      method: { required: true }
+
+jobs:
+  Execute:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run Binary
+        run: |
+          chmod +x ./primexarmy
+          ./primexarmy ${{ github.event.inputs.ip }} ${{ github.event.inputs.port }} ${{ github.event.inputs.time }} ${{ github.event.inputs.method }}
